@@ -1,0 +1,18 @@
+pipelineJob('hello-pipeline') {
+  definition {
+    cps {
+      sandbox(true)
+      script('''
+      pipeline {
+        agent any
+        stages {
+          stage("hello"){
+            steps{
+              echo "hello"
+            }
+          }
+        }
+      }'''.stripIndent())
+    }
+  }
+}
