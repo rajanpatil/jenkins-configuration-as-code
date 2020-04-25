@@ -1,0 +1,68 @@
+folder('python-poetry-demo'){
+  displayName('python-poetry-demo')
+  description('python-poetry-demo pipelines')
+}
+
+pipelineJob('python-poetry-demo/inline-pipeline') {
+  definition {
+    cpsScm {
+      scm {
+        git{
+          branch('master')
+          remote{
+            url('https://github.com/rajanpatil/python-poetry-demo.git')
+          }
+        }
+      }
+      scriptPath('Jenkinsfile')
+    }
+  }
+}
+
+pipelineJob('python-poetry-demo/simple-pipeline') {
+  definition {
+    cpsScm {
+      scm {
+        git{
+          branch('master')
+          remote{
+            url('https://github.com/rajanpatil/python-poetry-demo.git')
+          }
+        }
+      }
+      scriptPath('Jenkinsfile_simple')
+    }
+  }
+}
+
+pipelineJob('python-poetry-demo/override-steps-pipeline') {
+  definition {
+    cpsScm {
+      scm {
+        git{
+          branch('master')
+          remote{
+            url('https://github.com/rajanpatil/python-poetry-demo.git')
+          }
+        }
+      }
+      scriptPath('Jenkinsfile_override_steps')
+    }
+  }
+}
+
+pipelineJob('python-poetry-demo/override-steps-from-diff-libs-pipeline') {
+  definition {
+    cpsScm {
+      scm {
+        git{
+          branch('master')
+          remote{
+            url('https://github.com/rajanpatil/python-poetry-demo.git')
+          }
+        }
+      }
+      scriptPath('Jenkinsfile_override_steps_from_diff_libs')
+    }
+  }
+}
