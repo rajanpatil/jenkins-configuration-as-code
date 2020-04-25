@@ -41,6 +41,7 @@ jobs:
                 remote{
                   url('https://github.com/rajanpatil/jenkins-configuration-as-code.git')
                 }
+              }
             }
             scriptPath('./seed-jobs/Jenkinsfile')
           }
