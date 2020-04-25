@@ -58,7 +58,7 @@ jobs:
           cpsScm {
             scm {
               git{
-                branch('seed-jobs')
+                branch('caps-shared-lib-poc')
                 remote{
                   url('https://github.com/rajanpatil/jenkins-configuration-as-code.git')
                 }
