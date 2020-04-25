@@ -36,7 +36,11 @@ jobs:
         definition {
           cpsScm {
             scm {
-              git(branch: "seed-jobs", credentialsId: "github", url: "https://github.com/rajanpatil/jenkins-configuration-as-code.git")
+              git{
+                branch('seed-jobs')
+                remote{
+                  url('https://github.com/rajanpatil/jenkins-configuration-as-code.git')
+                }
             }
             scriptPath('./seed-jobs/Jenkinsfile')
           }
