@@ -1,4 +1,4 @@
-pipelineJob('hello-pipeline') {
+pipelineJob('pipeline-1') {
   definition {
     cps {
       sandbox(true)
@@ -8,7 +8,27 @@ pipelineJob('hello-pipeline') {
         stages {
           stage("hello"){
             steps{
-              echo "hello"
+              echo "hello from pipeline-1"
+            }
+          }
+        }
+      }'''.stripIndent())
+    }
+  }
+}
+
+
+pipelineJob('pipeline-2') {
+  definition {
+    cps {
+      sandbox(true)
+      script('''
+      pipeline {
+        agent any
+        stages {
+          stage("hello"){
+            steps{
+              echo "hello from pipeline-2"
             }
           }
         }
