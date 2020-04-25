@@ -25,3 +25,7 @@ Open URL `http://localhost:8080` in browser
 ### Jenkins shared library
 
 Switch to `shared-library` branch for Jenkins shared library configuration
+
+### Jenkins seed jobs
+
+Switch to `seed-jobs` branch for seed jobs configurations
