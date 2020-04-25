@@ -26,6 +26,6 @@ Open URL `http://localhost:8080` in browser
 
 Switch to `shared-library` branch for Jenkins shared library configuration
 
-### Jenkins seed jobs
+### CAPS python-poetry-demo pipelines
 
-Switch to `seed-jobs` branch for seed jobs configurations
+Run `seed-jobs-pipeline` to create different pipelins for `python-poetry-demo` service

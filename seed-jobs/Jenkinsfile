@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Create builds') {
+            steps {
+                jobDsl targets: 'seed-jobs/Jenkins.jobdsl'
+            }
+        }
+    }
+}

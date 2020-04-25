@@ -30,23 +30,41 @@ unclassified:
         yellow: "#CDCD00"
         yellowB: "#FFFF00"
 
+  globalLibraries:
+    libraries:
+      - defaultVersion: "master"
+        implicit: true
+        name: "shared-lib-1"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                id: "50f42311-6fcc-4332-a606-2549b8f822f5"
+                remote: "https://github.com/rajanpatil/jenkins-shared-lib.git"
+      - defaultVersion: "tests"
+        implicit: true
+        name: "shared-lib-2"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                id: "50f42311-6fcc-4332-a606-2549b8f82111"
+                remote: "https://github.com/rajanpatil/jenkins-shared-lib.git"
+
 jobs:
   - script: >
-      pipelineJob('hello-pipeline') {
+      pipelineJob('seed-jobs-pipeline') {
         definition {
-          cps {
-            sandbox(true)
-            script('''
-            pipeline {
-              agent any
-              stages {
-                stage("hello"){
-                  steps{
-                    echo "hello"
-                  }
+          cpsScm {
+            scm {
+              git{
+                branch('seed-jobs')
+                remote{
+                  url('https://github.com/rajanpatil/jenkins-configuration-as-code.git')
                 }
               }
-            }'''.stripIndent())
+            }
+            scriptPath('./seed-jobs/Jenkinsfile')
           }
         }
       }
