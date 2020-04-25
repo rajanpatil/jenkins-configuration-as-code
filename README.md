@@ -22,9 +22,6 @@ User below command to spin up Jenkins container
 
 Open URL `http://localhost:8080` in browser
 
-### Jenkins shared library
-
-Switch to `shared-library` branch for Jenkins shared library configuration
 
 ### CAPS python-poetry-demo pipelines
 
