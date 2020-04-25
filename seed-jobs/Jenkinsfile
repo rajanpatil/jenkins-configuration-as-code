@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Create builds') {
             steps {
-                jobDsl targets: 'seed/Jenkins.jobdsl'
+                jobDsl targets: 'seed-jobs/Jenkins.jobdsl'
             }
         }
     }
