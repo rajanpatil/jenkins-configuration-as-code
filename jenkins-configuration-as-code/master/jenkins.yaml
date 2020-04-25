@@ -1,0 +1,52 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code plugin\n\n"
+  numExecutors: 5
+  scmCheckoutRetryCount: 2
+
+tool:
+  git:
+    installations:
+      - home: "git"
+        name: "Default"
+
+unclassified:
+  ansiColorBuildWrapper:
+    colorMaps:
+      - black: "#000000"
+        blackB: "#4C4C4C"
+        blue: "#1E90FF"
+        blueB: "#4682B4"
+        cyan: "#00CDCD"
+        cyanB: "#00FFFF"
+        green: "#00CD00"
+        greenB: "#00FF00"
+        magenta: "#CD00CD"
+        magentaB: "#FF00FF"
+        name: "xterm"
+        red: "#CD0000"
+        redB: "#FF0000"
+        white: "#E5E5E5"
+        whiteB: "#FFFFFF"
+        yellow: "#CDCD00"
+        yellowB: "#FFFF00"
+
+jobs:
+  - script: >
+      pipelineJob('hello-pipeline') {
+        definition {
+          cps {
+            sandbox(true)
+            script('''
+            pipeline {
+              agent any
+              stages {
+                stage("hello"){
+                  steps{
+                    echo "hello"
+                  }
+                }
+              }
+            }'''.stripIndent())
+          }
+        }
+      }
