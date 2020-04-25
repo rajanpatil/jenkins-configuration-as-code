@@ -22,3 +22,6 @@ User below command to spin up Jenkins container
 
 Open URL `http://localhost:8080` in browser
 
+### Seed jobs
+
+Once Jenkins is up, trigger `seed-jobs-pipeline` pipeline to create jobs/pipelines defined in `seed-jobs/Jenkins.jobdsl`
