@@ -18,7 +18,7 @@ pipelineJob('pipeline-1') {
 }
 
 
-pipelineJob('pipeline-2') {
+pipelineJob('pipeline-4') {
   definition {
     cps {
       sandbox(true)
@@ -28,7 +28,7 @@ pipelineJob('pipeline-2') {
         stages {
           stage("hello"){
             steps{
-              echo "hello from pipeline-2"
+              echo "hello from pipeline-4"
             }
           }
         }
