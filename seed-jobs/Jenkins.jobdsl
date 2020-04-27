@@ -36,3 +36,22 @@ pipelineJob('pipeline-2') {
     }
   }
 }
+
+pipelineJob('pipeline-3') {
+  definition {
+    cps {
+      sandbox(true)
+      script('''
+      pipeline {
+        agent any
+        stages {
+          stage("hello"){
+            steps{
+              echo "hello from pipeline-3"
+            }
+          }
+        }
+      }'''.stripIndent())
+    }
+  }
+}
