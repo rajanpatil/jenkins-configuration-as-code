@@ -17,26 +17,6 @@ pipelineJob('pipeline-1') {
   }
 }
 
-
-pipelineJob('pipeline-4') {
-  definition {
-    cps {
-      sandbox(true)
-      script('''
-      pipeline {
-        agent any
-        stages {
-          stage("hello"){
-            steps{
-              echo "hello from pipeline-4"
-            }
-          }
-        }
-      }'''.stripIndent())
-    }
-  }
-}
-
 pipelineJob('pipeline-3') {
   definition {
     cps {
